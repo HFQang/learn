@@ -1,0 +1,30 @@
+#include<stdio.h>
+#define N 3
+void exchange(int (*p)[N])
+{
+	int i,j,t;
+	for(i=0;i<N;i++)
+		{
+			for(j=0;j<i;j++)
+			{
+				t=p[i][j];
+				p[i][j]=p[j][i];
+				p[j][i]=t;
+			}
+	    }
+}
+
+int main()
+{
+	int i,j,a[N][N]={{1,2,3},{4,5,6},{7,8,9}};
+	exchange(a);
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<N;j++)
+		{
+			printf("%3d",a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
